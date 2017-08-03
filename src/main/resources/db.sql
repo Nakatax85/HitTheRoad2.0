@@ -1,14 +1,34 @@
 CREATE DATABASE hit_the_road;
 USE hit_the_road;
-CREATE TABLE user (
-  id INTEGER AUTO_INCREMENT,
-  username CHAR(50) UNIQUE,
-  password CHAR(50),
-  email CHAR(50),
-  PRIMARY KEY (id)
-);
-CREATE TABLE supplies (
-  id INTEGER AUTO_INCREMENT,
-  name CHAR(50) UNIQUE,
-  PRIMARY KEY (id)
-);
+
+create table preferences
+(
+  id int not null auto_increment
+    primary key,
+  userID int null,
+  name varchar(128) null
+)
+;
+
+create table supplies
+(
+  id int not null auto_increment
+    primary key,
+  name char(50) null,
+  constraint name
+  unique (name)
+)
+;
+
+create table user
+(
+  id int not null auto_increment
+    primary key,
+  username char(50) null,
+  password char(50) null,
+  email char(50) null,
+  constraint username
+  unique (username)
+)
+;
+
