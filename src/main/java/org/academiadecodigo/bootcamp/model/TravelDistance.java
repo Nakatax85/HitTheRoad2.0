@@ -11,21 +11,21 @@ import java.net.URL;
 public class TravelDistance {
 
     private static String originDestiny;
-    private static String origemFinal;
-    private static String destinoFinal;
+    private static String finalOrigin;
+    private static String finalDestiny;
     private static int numberOfDays;
     private static int kilometres;
 
-    public static void distance(String origem, String destino) {
+    public static void distance(String origin, String destiny) {
 
         try {
 
-            originDestiny = origem + destino;
+            originDestiny = origin + destiny;
 
             String line, outputString= "";
             String commaRemove = "";
 
-            URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + origem + "&destinations=" + destino + "&mode=walking");
+            URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + origin + "&destinations=" + destiny + "&mode=walking");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             BufferedReader reader = new BufferedReader(
@@ -52,8 +52,8 @@ public class TravelDistance {
 
             SuppliesCalculator.setNumberOfDays(numOfDays);
 
-            origemFinal = origem;
-            destinoFinal = destino;
+            finalOrigin = origin;
+            finalDestiny = destiny;
 
             numberOfDays = numOfDays;
 
@@ -70,12 +70,12 @@ public class TravelDistance {
     }
 
 
-    public static String getOrigemFinal() {
-        return origemFinal;
+    public static String getFinalOrigin() {
+        return finalOrigin;
     }
 
-    public static String getDestinoFinal() {
-        return destinoFinal;
+    public static String getFinalDestiny() {
+        return finalDestiny;
     }
 
     public static int getNumberOfDays() {
@@ -86,12 +86,12 @@ public class TravelDistance {
         return kilometres;
     }
 
-    public static void setOrigemFinal(String origemFinal) {
-        TravelDistance.origemFinal = origemFinal;
+    public static void setFinalOrigin(String finalOrigin) {
+        TravelDistance.finalOrigin = finalOrigin;
     }
 
-    public static void setDestinoFinal(String destinoFinal) {
-        TravelDistance.destinoFinal = destinoFinal;
+    public static void setFinalDestiny(String finalDestiny) {
+        TravelDistance.finalDestiny = finalDestiny;
     }
     public static void setOriginDestiny() {
         originDestiny = "";

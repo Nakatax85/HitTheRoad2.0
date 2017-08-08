@@ -11,9 +11,6 @@ import org.academiadecodigo.bootcamp.persistence.FileManager;
 import org.academiadecodigo.bootcamp.persistence.SuppliesCalculator;
 import org.academiadecodigo.bootcamp.service.ServiceRegistry;
 import org.academiadecodigo.bootcamp.service.user.UserService;
-import org.academiadecodigo.bootcamp.service.user.UserServiceJdbc;
-
-import javax.naming.NameAlreadyBoundException;
 
 public class OverallController implements Controller {
 
@@ -53,8 +50,8 @@ public class OverallController implements Controller {
     public void overallView() {
 
         overall.setText("");
-        overall.setText("Origin: " + TravelDistance.getOrigemFinal() +
-                " | Destination: " + TravelDistance.getDestinoFinal() +
+        overall.setText("Origin: " + TravelDistance.getFinalOrigin() +
+                " | Destination: " + TravelDistance.getFinalDestiny() +
                 " | Distance: " + TravelDistance.getKilometres() + " km" +
                 " | Days Walking: " + TravelDistance.getNumberOfDays() + "      (30km/day avg)");
 
@@ -82,8 +79,8 @@ public class OverallController implements Controller {
     @FXML
     void onClickBack(ActionEvent event) {
 
-        TravelDistance.setDestinoFinal(null);
-        TravelDistance.setOrigemFinal(null);
+        TravelDistance.setFinalDestiny(null);
+        TravelDistance.setFinalOrigin(null);
         Navigation.getInstance().back();
 
     }

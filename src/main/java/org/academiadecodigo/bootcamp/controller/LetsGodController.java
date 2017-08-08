@@ -9,7 +9,6 @@ import org.academiadecodigo.bootcamp.model.TravelDistance;
 import org.academiadecodigo.bootcamp.service.ServiceRegistry;
 import org.academiadecodigo.bootcamp.service.user.UserService;
 
-import static org.academiadecodigo.bootcamp.utils.Constants.LETSGOVIEW;
 import static org.academiadecodigo.bootcamp.utils.Constants.OVERALLVIEW;
 import static org.academiadecodigo.bootcamp.utils.Constants.PREFERENCE;
 
@@ -38,26 +37,26 @@ public class LetsGodController implements Controller{
     @FXML
     void lestGoClick(ActionEvent event) {
 
-        String origem = "";
-        String destino = "";
+        String origin = "";
+        String destiny = "";
 
         if(originField.getText().split(" ").length > 1) {
-            origem += originField.getText().replace(" ", "");
+            origin += originField.getText().replace(" ", "");
         } else {
-            origem = originField.getText();
+            origin = originField.getText();
         }
         if(destinyField.getText().split(" ").length > 1) {
-            destino += destinyField.getText().replace(" ", "");
+            destiny += destinyField.getText().replace(" ", "");
         } else {
-            destino = destinyField.getText();
+            destiny = destinyField.getText();
         }
 
-        origem = origem.toLowerCase();
-        destino = destino.toLowerCase();
+        origin = origin.toLowerCase();
+        destiny = destiny.toLowerCase();
 
-        TravelDistance.distance(origem, destino);
+        TravelDistance.distance(origin, destiny);
 
-        if(TravelDistance.getOrigemFinal() == null || TravelDistance.getDestinoFinal() == null) {
+        if(TravelDistance.getFinalOrigin() == null || TravelDistance.getFinalDestiny() == null) {
             routeNotFoundWarning.setVisible(true);
             return;
         }

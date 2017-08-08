@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS hit_the_road;
 CREATE DATABASE hit_the_road;
 USE hit_the_road;
 
