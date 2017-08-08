@@ -16,7 +16,7 @@ public class TravelDistance {
     private static int numberOfDays;
     private static int kilometres;
 
-    public String googleMaps(String origin, String destiny) {
+    public static void distance(String origin, String destiny) {
 
         try {
 
@@ -65,7 +65,6 @@ public class TravelDistance {
         } catch (IOException err) {
         } catch (ArrayIndexOutOfBoundsException err) {
         }
-        return null;
     }
 
     public static String getOriginDestiny() {

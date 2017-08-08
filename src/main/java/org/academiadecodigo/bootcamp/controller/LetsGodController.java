@@ -14,8 +14,6 @@ import static org.academiadecodigo.bootcamp.utils.Constants.PREFERENCE;
 
 public class LetsGodController implements Controller{
 
-    private 
-
     private UserService userService;
 
     @FXML
