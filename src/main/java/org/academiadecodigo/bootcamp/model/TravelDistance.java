@@ -16,7 +16,7 @@ public class TravelDistance {
     private static int numberOfDays;
     private static int kilometres;
 
-    public static void distance(String origin, String destiny) {
+    public String googleMaps(String origin, String destiny) {
 
         try {
 
@@ -33,6 +33,8 @@ public class TravelDistance {
             while ((line = reader.readLine()) != null) {
                 outputString += line;
             }
+
+            System.out.println(outputString);
 
             String[] result = outputString.split("\"text\" : \"");
 
@@ -59,10 +61,11 @@ public class TravelDistance {
 
             SuppliesCalculator.setNumberOfDays(numberOfDays);
 
+
         } catch (IOException err) {
         } catch (ArrayIndexOutOfBoundsException err) {
         }
-
+        return null;
     }
 
     public static String getOriginDestiny() {

@@ -12,10 +12,9 @@ import org.academiadecodigo.bootcamp.service.user.UserService;
 import static org.academiadecodigo.bootcamp.utils.Constants.OVERALLVIEW;
 import static org.academiadecodigo.bootcamp.utils.Constants.PREFERENCE;
 
-/**
- * Created by codecadet on 28/07/2017.
- */
 public class LetsGodController implements Controller{
+
+    private 
 
     private UserService userService;
 
